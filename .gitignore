@@ -2,4 +2,7 @@
 # This .gitignore file was automatically created by Microsoft(R) Visual Studio.
 ################################################################################
 
-/src/DapperDBLibrary.PostgreSQL/obj
+/src/*/obj
+/src/*/bin
+/src/.vs
+/.vs
