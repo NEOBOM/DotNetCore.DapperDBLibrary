@@ -1,16 +1,19 @@
 ﻿using DapperDBLibrary.Common;
 using Npgsql;
+using System;
+using System.Data;
 
 namespace DapperDBLibrary.PostgreSQL
 {
     public class PostgreDataContext : DataContext, IPostgreDataContext
     {
-        public PostgreDataContext(string connectionString) : base(new NpgsqlConnection(connectionString))
+        private readonly string _connectionString;
+
+        public PostgreDataContext(string connectionString)
         {
+            _connectionString = connectionString ?? throw new ArgumentNullException("connectionString can´t be nul or empty.");
         }
 
-        public PostgreDataContext(NpgsqlConnection npgsqlConnection) : base(npgsqlConnection)
-        {
-        }
+        protected override IDbConnection DbConnection() => new NpgsqlConnection(_connectionString);
     }
 }

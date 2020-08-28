@@ -18,7 +18,7 @@ namespace DapperDBLibrary.Test
         [Fact]
         public void InsetClient()
         {
-            var result = _postgreDataContext.Execute("insert into client values (1, 'Fulano', '1981-07-15')", commandType: System.Data.CommandType.Text);
+            var result = _postgreDataContext.Execute("insert into client values (4, 'Fulano4', '1981-07-15')", commandType: System.Data.CommandType.Text);
             Assert.True(result);
         }
 

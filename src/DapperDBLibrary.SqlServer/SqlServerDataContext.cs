@@ -1,16 +1,19 @@
 ﻿using DapperDBLibrary.Common;
+using System;
+using System.Data;
 using System.Data.SqlClient;
 
 namespace DapperDBLibrary.SqlServer
 {
     public class SqlServerDataContext : DataContext, ISqlServerDataContext
     {
-        public SqlServerDataContext(string connectionString) : base(new SqlConnection(connectionString))
+        private readonly string _connectionString;
+
+        public SqlServerDataContext(string connectionString)
         {
+            _connectionString = connectionString ?? throw new ArgumentNullException("connectionString can´t be nul or empty.");
         }
 
-        public SqlServerDataContext(SqlConnection sqlConnection) : base(sqlConnection)
-        {
-        }
+        protected override IDbConnection DbConnection() => new SqlConnection(_connectionString);
     }
 }
