@@ -11,16 +11,19 @@ namespace DapperDBLibrary.Common
     {
         protected abstract IDbConnection DbConnection();
 
-        protected readonly string _connectionString;
+        protected string _connectionString;
+
+        public DataContext()
+        {
+        }
+
+        public DataContext(IConfiguration configuration) : this(configuration.GetConnectionString("Default"))
+        {
+        }
 
         public DataContext(string connectionString)
         {
             _connectionString = connectionString ?? throw new ArgumentNullException("connectionString can´t be nul or empty.");
-        }
-
-        public DataContext(IConfiguration configuration)
-        {
-            _connectionString = configuration.GetConnectionString("Default") ?? throw new ArgumentNullException("connectionString can´t be nul or empty.");
         }
 
         public virtual IEnumerable<T> Query<T>(string sql, object parameters = null, IDbTransaction transaction = null, int? commandTimeout = null, CommandType? commandType = null)
