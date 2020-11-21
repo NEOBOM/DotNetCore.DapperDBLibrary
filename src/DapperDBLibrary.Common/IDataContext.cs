@@ -6,6 +6,14 @@ namespace DapperDBLibrary.Common
 {
     public interface IDataContext
     {
+        T Get<T>(object parameters = null, IDbTransaction transaction = null, int? commandTimeout = null) where T : class;
+        Task<T> GetAsync<T>(object parameters = null, IDbTransaction transaction = null, int? commandTimeout = null) where T : class;
+        IEnumerable<T> GetAll<T>(IDbTransaction transaction = null, int? commandTimeout = null) where T : class;
+        Task<IEnumerable<T>> GetAllAsync<T>(IDbTransaction transaction = null, int? commandTimeout = null) where T : class;
+        bool Insert<T>(T entity, IDbTransaction transaction = null, int? commandTimeout = null) where T : class;
+        Task<bool> InsertAsync<T>(T entity, IDbTransaction transaction = null, int? commandTimeout = null) where T : class;
+        bool Update<T>(T entity, IDbTransaction transaction = null, int? commandTimeout = null) where T : class;
+        Task<bool> UpdateAsync<T>(T entity, IDbTransaction transaction = null, int? commandTimeout = null) where T : class;
         IEnumerable<T> Query<T>(string sql, object parameters = null, IDbTransaction transaction = null, int? commandTimeout = null, CommandType? commandType = null);
         Task<IEnumerable<T>> QueryAsync<T>(string sql, object parameters = null, IDbTransaction transaction = null, int? commandTimeout = null, CommandType? commandType = null);
         T QuerySingle<T>(string sql, object parameters = null, IDbTransaction transaction = null, int? commandTimeout = null, CommandType? commandType = null);
