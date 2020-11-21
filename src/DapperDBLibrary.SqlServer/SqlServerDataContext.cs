@@ -14,6 +14,11 @@ namespace DapperDBLibrary.SqlServer
             _connectionString = connectionString ?? throw new ArgumentNullException("connectionString can´t be nul or empty.");
         }
 
-        protected override IDbConnection DbConnection() => new SqlConnection(_connectionString);
+        protected override IDbConnection DbConnection()
+        {
+            var db = new SqlConnection(_connectionString);
+            db.Open();
+            return db;
+        }
     }
 }

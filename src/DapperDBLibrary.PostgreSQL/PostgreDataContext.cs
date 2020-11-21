@@ -14,6 +14,11 @@ namespace DapperDBLibrary.PostgreSQL
             _connectionString = connectionString ?? throw new ArgumentNullException("connectionString can´t be nul or empty.");
         }
 
-        protected override IDbConnection DbConnection() => new NpgsqlConnection(_connectionString);
+        protected override IDbConnection DbConnection()
+        {
+            var db = new NpgsqlConnection(_connectionString);
+            db.Open();
+            return db;
+        }
     }
 }
