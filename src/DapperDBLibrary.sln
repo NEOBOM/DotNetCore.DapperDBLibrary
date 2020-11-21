@@ -9,7 +9,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DapperDBLibrary.Common", "D
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DapperDBLibrary.SqlServer", "DapperDBLibrary.SqlServer\DapperDBLibrary.SqlServer.csproj", "{147A42CC-2ADC-4BCE-811A-9C926E900BD3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DapperDBLibrary.Test", "DapperDBLibrary.Test\DapperDBLibrary.Test.csproj", "{9B2F4DE9-7A0F-43AE-B641-60D9259B39CE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DapperDBLibrary.Test", "DapperDBLibrary.Test\DapperDBLibrary.Test.csproj", "{9B2F4DE9-7A0F-43AE-B641-60D9259B39CE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DapperDBLibrary.SqLite", "DapperDBLibrary.SqLite\DapperDBLibrary.SqLite.csproj", "{DB549945-876D-4E49-BCC6-D02ED459465D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{9B2F4DE9-7A0F-43AE-B641-60D9259B39CE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9B2F4DE9-7A0F-43AE-B641-60D9259B39CE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9B2F4DE9-7A0F-43AE-B641-60D9259B39CE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DB549945-876D-4E49-BCC6-D02ED459465D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DB549945-876D-4E49-BCC6-D02ED459465D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DB549945-876D-4E49-BCC6-D02ED459465D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DB549945-876D-4E49-BCC6-D02ED459465D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
